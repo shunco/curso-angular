@@ -16,16 +16,16 @@ export class AppComponent {
     children: [
       {
         title: 'Componente de Modulos Externos',
-        path: 'componente_externos'
+        path: 'external_component'
       }, {
         title: 'Componentes Internos',
         path: 'componente_internos'
       },{
         title: 'Componentes Externos Web',
-        path: 'componentes_externo_web'
+        path: 'web_component'
       },{
         title: 'Modulo Carga Lenta',
-        path: 'module_carga_lenta'
+        path: 'editor'
       }
     ]
 
