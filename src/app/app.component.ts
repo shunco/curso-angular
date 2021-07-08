@@ -17,15 +17,15 @@ export class AppComponent {
       {
         title: 'Componente de Modulos Externos',
         path: 'external_component'
-      }, {
-        title: 'Componentes Internos',
-        path: 'componente_internos'
       },{
         title: 'Componentes Externos Web',
         path: 'web_component'
       },{
         title: 'Modulo Carga Lenta',
         path: 'editor'
+      },{
+        title: 'Componentes Internos',
+        path: 'internal_component'
       }
     ]
 
