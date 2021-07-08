@@ -1,16 +1,10 @@
 <div class="container">
     <div class="row bootstrap snippets bootdeys">
-        <div class="col-md-3">
-            <app-web></app-web>
-        </div>
-        <div class="col-md-3">
-            <app-art></app-art>
-        </div>
-        <div class="col-md-3">
-            <app-manager></app-manager>
-        </div>
-        <div class="col-md-3">
-            <app-admin></app-admin>
+        <div class="col-md-3" *ngFor="let usuario of usuarios">
+            <app-web *ngIf="usuario.type === 'web'"></app-web>
+            <app-art *ngIf="usuario.type === 'art'"></app-art>
+            <app-manager *ngIf="usuario.type === 'manager'"></app-manager>
+            <app-admin *ngIf="usuario.type === 'admin'"></app-admin>
         </div>
     </div>
 </div>
