@@ -10,26 +10,39 @@ import { Menu } from './models/menu';
 export class AppComponent {
   isOpen: boolean = true;
 
-  public menus: Menu[] = [{
+  public menus: Menu[] = [
+    {
     title: 'Modulos',
     key: 'modulos',
     children: [
       {
         title: 'Componente de Modulos Externos',
         path: 'external_component'
-      },{
+      }, {
         title: 'Componentes Externos Web',
         path: 'web_component'
-      },{
+      }, {
         title: 'Modulo Carga Lenta',
         path: 'editor'
-      },{
+      }, {
         title: 'Componentes Internos',
         path: 'internal_component'
       }
     ]
 
-  },{
+  },
+
+  {
+    title: 'Routing',
+    key: 'routing',
+    children: [{
+      title: 'Parametros',
+      path: 'routing_params'
+    }]
+
+  },
+
+  {
     title: 'Usuario',
     path: 'usuarios'
   }]
