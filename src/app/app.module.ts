@@ -12,7 +12,9 @@ import { WebComponent } from './pages/internal-components/web/web.component';
 import { ManagerComponent } from './pages/internal-components/manager/manager.component';
 import { AdminComponent } from './pages/internal-components/admin/admin.component';
 import { ArtComponent } from './pages/internal-components/art/art.component';
-import { RoutingParamsComponent } from './pages/routing-params/routing-params.component'; 
+import { RoutingParamsComponent } from './pages/routing-params/routing-params.component';
+import { PostsComponent } from './pages/routing-params/posts/posts.component';
+import { AboutComponent } from './pages/routing-params/about/about.component'; 
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { RoutingParamsComponent } from './pages/routing-params/routing-params.co
     ManagerComponent,
     AdminComponent,
     ArtComponent,
-    RoutingParamsComponent
+    RoutingParamsComponent,
+    PostsComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
