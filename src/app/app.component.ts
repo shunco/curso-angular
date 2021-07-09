@@ -38,6 +38,9 @@ export class AppComponent {
     children: [{
       title: 'Parametros',
       path: 'routing_params'
+    }, {
+      title: 'Productos',
+      path: 'productos'
     }]
 
   },

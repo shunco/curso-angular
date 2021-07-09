@@ -9,6 +9,8 @@ import { RoutingParamsComponent } from './pages/routing-params/routing-params.co
 import { PostsComponent } from './pages/routing-params/posts/posts.component';
 import { AboutComponent } from './pages/routing-params/about/about.component';
 import { FriendsComponent } from './pages/routing-params/friends/friends.component';
+import { ProductosComponent } from './pages/productos/productos.component'; 
+
 
 const routes: Routes = [{
   path: 'external_component',
@@ -48,8 +50,11 @@ const routes: Routes = [{
 
 
 
-  
+
   ]
+}, {
+  path: 'productos',
+  component: ProductosComponent
 }
 ];
 
