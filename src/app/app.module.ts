@@ -14,7 +14,8 @@ import { AdminComponent } from './pages/internal-components/admin/admin.componen
 import { ArtComponent } from './pages/internal-components/art/art.component';
 import { RoutingParamsComponent } from './pages/routing-params/routing-params.component';
 import { PostsComponent } from './pages/routing-params/posts/posts.component';
-import { AboutComponent } from './pages/routing-params/about/about.component'; 
+import { AboutComponent } from './pages/routing-params/about/about.component';
+import { FriendsComponent } from './pages/routing-params/friends/friends.component'; 
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { AboutComponent } from './pages/routing-params/about/about.component';
     ArtComponent,
     RoutingParamsComponent,
     PostsComponent,
-    AboutComponent
+    AboutComponent,
+    FriendsComponent
   ],
   imports: [
     BrowserModule,
