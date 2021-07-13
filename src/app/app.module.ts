@@ -17,6 +17,7 @@ import { PostsComponent } from './pages/routing-params/posts/posts.component';
 import { AboutComponent } from './pages/routing-params/about/about.component';
 import { FriendsComponent } from './pages/routing-params/friends/friends.component';
 import { ProductosComponent } from './pages/productos/productos.component'; 
+import { NotifierModule } from 'angular-notifier';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { ProductosComponent } from './pages/productos/productos.component';
     BrowserModule,
     AppRoutingModule,
     SharedModule,
-    DataTablesModule
+    DataTablesModule,
+    NotifierModule
   ],
   providers: [],
   bootstrap: [AppComponent]
