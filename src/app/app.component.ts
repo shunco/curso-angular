@@ -51,6 +51,9 @@ export class AppComponent {
     children: [{
       title: 'Weather',
       path: 'observable/weather'
+    },{
+      title: 'Carrito',
+      path: 'observable/carrito'
     }]
 
   },
