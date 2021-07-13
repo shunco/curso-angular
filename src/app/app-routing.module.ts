@@ -55,7 +55,8 @@ const routes: Routes = [{
 }, {
   path: 'productos',
   component: ProductosComponent
-}
+},
+  { path: 'observable', loadChildren: () => import('./modules/observable/observable.module').then(m => m.ObservableModule) }
 ];
 
 @NgModule({

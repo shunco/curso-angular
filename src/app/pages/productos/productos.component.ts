@@ -18,9 +18,6 @@ export class ProductosComponent implements OnInit {
   ngOnInit() {
 
     let queryParams: Observable<any> = this.activatedRoute.queryParams;
-
-    let params: Observable<any> = this.activatedRoute.params;
-
     queryParams.subscribe(queryParams=> {
        this.category = queryParams.category;
        console.log(queryParams);

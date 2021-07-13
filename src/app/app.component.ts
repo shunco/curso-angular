@@ -46,6 +46,16 @@ export class AppComponent {
   },
 
   {
+    title: 'Observable',
+    key: 'observable',
+    children: [{
+      title: 'Weather',
+      path: 'observable/weather'
+    }]
+
+  },
+
+  {
     title: 'Usuario',
     path: 'usuarios'
   }]
