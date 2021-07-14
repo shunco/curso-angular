@@ -34,7 +34,7 @@
                             <polyline points="1 20 1 14 7 14"></polyline>
                             <path d="M3.51 9a9 9 0 0 1 14.85-3.36L23 10M1 14l4.64 4.36A9 9 0 0 0 20.49 15"></path>
                         </svg>Update cart</button>
-                    <button class="btn btn-outline-danger btn-sm btn-block mb-2" type="button">
+                    <button class="btn btn-outline-danger btn-sm btn-block mb-2" type="button" (click)="removeItem()">
                         <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                             class="feather feather-trash-2 mr-1">
@@ -180,14 +180,14 @@
                 <div class="accordion" id="cart-accordion">
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="accordion-heading font-weight-semibold"><a href="#promocode" role="button"
+                            <h3 class="accordion-heading font-weight-semibold"><button (click)="applyPromo()" role="button"
                                     data-toggle="collapse" aria-expanded="true" aria-controls="promocode">Apply promo
                                     code<span class="accordion-indicator"><svg xmlns="http://www.w3.org/2000/svg"
                                             width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
                                             stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
                                             class="feather feather-chevron-up">
                                             <polyline points="18 15 12 9 6 15"></polyline>
-                                        </svg></span></a></h3>
+                                        </svg></span></button></h3>
                         </div>
                         <div class="collapse show" id="promocode" data-parent="#cart-accordion">
                             <div class="card-body">

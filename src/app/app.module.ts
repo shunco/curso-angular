@@ -16,8 +16,10 @@ import { RoutingParamsComponent } from './pages/routing-params/routing-params.co
 import { PostsComponent } from './pages/routing-params/posts/posts.component';
 import { AboutComponent } from './pages/routing-params/about/about.component';
 import { FriendsComponent } from './pages/routing-params/friends/friends.component';
-import { ProductosComponent } from './pages/productos/productos.component'; 
+import { ProductosComponent } from './pages/productos/productos.component';
 import { NotifierModule } from 'angular-notifier';
+
+import { NotificationService } from './services/notification.service';
 
 @NgModule({
   declarations: [
@@ -40,11 +42,20 @@ import { NotifierModule } from 'angular-notifier';
     AppRoutingModule,
     SharedModule,
     DataTablesModule,
-    NotifierModule
+    NotifierModule.withConfig({
+      position: {
+        horizontal: {
+          position: 'right'
+        },
+        vertical: {
+          position: 'top'
+        }
+      }
+    }),
   ],
-  providers: [],
+  providers: [NotificationService],
   bootstrap: [AppComponent]
 })
-export class AppModule { 
-  
+export class AppModule {
+
 }
