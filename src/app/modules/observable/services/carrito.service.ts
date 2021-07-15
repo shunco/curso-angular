@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { of, Observable } from 'rxjs';
+import { map } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -48,7 +49,19 @@ export class CarritoService {
   }
 
   public getProductos(): Observable<any[]> {
-    return of(this.productos);
+    return of(this.productos).pipe(map(productos=>{
+
+
+      for(let i=0; i <productos.length; i++ ){
+
+        productos[i]['amount']= productos[i].price * productos[i].quantity;
+        productos[i].amount= productos[i].price * productos[i].quantity;
+
+      }
+
+
+      return productos;
+    } ));
   }
 
 
