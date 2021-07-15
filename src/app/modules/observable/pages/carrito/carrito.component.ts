@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { NotificationService } from '../../../../services/notification.service';
-import {Message, TypeMessage} from '../../../../models/message'
+import {Message, TypeMessage} from '../../../../models/message';
+import { CarritoService } from '../../services/carrito.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-carrito',
@@ -9,11 +11,16 @@ import {Message, TypeMessage} from '../../../../models/message'
 })
 export class CarritoComponent implements OnInit {
 
-  constructor(private notifiService: NotificationService) {
+  productos$: Observable<any[]>;
+
+  constructor(private notifiService: NotificationService, private carritoService: CarritoService) {
+
+
 
    }
 
   ngOnInit() {
+    this.productos$ = this.carritoService.getProductos();
   }
 
 
