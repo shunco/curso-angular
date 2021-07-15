@@ -71,6 +71,9 @@ export class AppComponent implements OnInit {
       }, {
         title: 'Carrito',
         path: 'observable/carrito'
+      }, {
+        title: 'Movie DB',
+        path: 'observable/moviedb'
       }]
 
     },
