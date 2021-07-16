@@ -20,7 +20,7 @@ export class MoviesdbService {
 
    public getMovie(query: string): Observable<Movie[]>{
 
-     let params: HttpParams = new HttpParams().append('query', query);
+     let params: HttpParams = new HttpParams().append('query', query).append('api_key', this.api_key);
 
      return this.http.get<Movie[]>(this.url, { params}).pipe(
        map((response: any)=>{

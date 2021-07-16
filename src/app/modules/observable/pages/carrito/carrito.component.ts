@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,ChangeDetectionStrategy } from '@angular/core';
 import { NotificationService } from '../../../../services/notification.service';
 import {Message, TypeMessage} from '../../../../models/message';
 import { CarritoService } from '../../services/carrito.service';
@@ -12,6 +12,7 @@ import { Observable } from 'rxjs';
 export class CarritoComponent implements OnInit {
 
   productos$: Observable<any[]>;
+  
 
   constructor(private notifiService: NotificationService, private carritoService: CarritoService) {
 
