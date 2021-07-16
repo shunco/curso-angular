@@ -7,11 +7,12 @@ import { CarritoComponent } from './pages/carrito/carrito.component';
 import { MoviedbComponent } from './pages/moviedb/moviedb.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { SharedModule} from '../../modules/shared/shared.module'
+import { SharedModule} from '../../modules/shared/shared.module';
+import { InvoiceComponent } from './pages/invoice/invoice.component'
 
 
 @NgModule({
-  declarations: [ObservableComponent, CarritoComponent, MoviedbComponent],
+  declarations: [ObservableComponent, CarritoComponent, MoviedbComponent, InvoiceComponent],
   imports: [
     CommonModule,
     ObservableRoutingModule,

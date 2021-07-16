@@ -74,6 +74,9 @@ export class AppComponent implements OnInit {
       }, {
         title: 'Movie DB',
         path: 'observable/moviedb'
+      },{
+        title: 'Factura',
+        path: 'observable/factura'
       }]
 
     },
