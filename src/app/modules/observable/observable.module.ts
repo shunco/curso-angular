@@ -7,6 +7,7 @@ import { CarritoComponent } from './pages/carrito/carrito.component';
 import { MoviedbComponent } from './pages/moviedb/moviedb.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { SharedModule} from '../../modules/shared/shared.module'
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { HttpClientModule } from '@angular/common/http';
     CommonModule,
     ObservableRoutingModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    SharedModule
   ]
 })
 export class ObservableModule { }
