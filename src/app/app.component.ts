@@ -80,6 +80,10 @@ export class AppComponent implements OnInit {
       }]
 
     },
+    {
+      title: 'Eventos',
+      path: 'events'
+    },
 
     {
       title: 'Usuario',
