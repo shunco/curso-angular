@@ -6,10 +6,11 @@ import { EventsComponent } from './events.component';
 import { ListsService} from './services/lists.service';
 import { DragDirective } from './directives/drag.directive';
 import { DropDirective } from './directives/drop.directive';
+import { SortPipe } from './pipes/sort.pipe';
 
 
 @NgModule({
-  declarations: [EventsComponent, DragDirective, DropDirective],
+  declarations: [EventsComponent, DragDirective, DropDirective, SortPipe],
   imports: [
     CommonModule,
     EventsRoutingModule

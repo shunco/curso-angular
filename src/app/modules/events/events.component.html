@@ -1,14 +1,14 @@
 <div class="row">
     <div class="col-md-6"  >
         <ul class="list-group" appDrop [no_list]="0">
-            <li class="list-group-item"  *ngFor="let item of service.list[0]" draggable="true" 
-            appDrag [no_list]="0"  [item]="item" >{{item.name}}</li>
+            <li class="list-group-item"  *ngFor="let item of (service.list[0] | sort:'name':'desc')" draggable="true" 
+            appDrag [no_list]="0"  [item]="item" >{{item.name}} {{item.date}}</li>
           </ul>
     </div>
     <div class="col-md-6">
         <ul class="list-group" appDrop [no_list]="1">
-            <li class="list-group-item"  *ngFor="let item of service.list[1]" draggable="true" 
-            appDrag [no_list]="1"  [item]="item"> {{item.name}}</li>
+            <li class="list-group-item"  *ngFor="let item of (service.list[1] | sort:'name':'desc' )" draggable="true" 
+            appDrag [no_list]="1"  [item]="item"> {{item.name}}  {{item.date}}</li>
           </ul>
     </div>
 </div>
