@@ -62,6 +62,8 @@ export class SortPipe implements PipeTransform {
 
     }else if(args.length === 2){
 
+      
+
       if(args[0] === 'date'){
         facturas = this.setTimestamp(facturas);
         facturas = _.orderBy(facturas, ['timestamp'], [args[1]]);
