@@ -84,6 +84,17 @@ export class AppComponent implements OnInit {
       title: 'Eventos',
       path: 'events'
     },
+    {
+      title: 'Template',
+      key: 'template',
+      children: [{
+        title: 'Content',
+        path: 'template/content'
+      }]
+
+    }, 
+
+
 
     {
       title: 'Usuario',
