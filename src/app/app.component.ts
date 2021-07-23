@@ -90,6 +90,9 @@ export class AppComponent implements OnInit {
       children: [{
         title: 'Content',
         path: 'template/content'
+      },{
+        title: 'loading',
+        path: 'template/loading'
       }]
 
     }, 

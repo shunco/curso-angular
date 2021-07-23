@@ -1,0 +1,56 @@
+<div class="container">
+  
+  <ng-container *ngTemplateOutlet="customTemplate"></ng-container>
+
+  <ng-container *ngIf="(productos$ | async) as productos; else loading">
+    <ul class="row portfolio lightbox list-unstyled mb-0 shuffle boxed-portfolio" id="grid">
+      <!-- project -->
+      <li class="col-md-6 col-lg-4 project shuffle-item filtered" *ngFor="let producto of productos">
+        <div class="card mb-0">
+          <div class="project m-0">
+            <figure class="portfolio-item">
+              <div class="hovereffect">
+                <img class="img-responsive" src="https://via.placeholder.com/350x180/E6E6FA/000000" alt="">
+                <div class="overlay">
+                  <div class="hovereffect-title project-icons">
+                    <a href="#x" data-toggle="modal" data-target=".project-modal2"><i class="fa fa-eye"></i></a>
+                    <a href="#" class="image-lightbox" title="STATIONERY"><i class="fa fa-share"></i></a>
+                  </div>
+                  <!-- / project-icons -->
+                </div>
+                <!-- / overlay -->
+              </div>
+              <!-- / hovereffect -->
+            </figure>
+            <!-- / portfolio-item -->
+          </div>
+          <!-- / project -->
+          <div class="card-body">
+            <a href="single-project2.html" class="card-title title-link fs-16 fw-bold">STATIONERY</a>
+            <p class="card-text mt-5 mb-0 fs-14"><b>Skills:</b> Branding, Illustration</p>
+          </div>
+          <!-- / card-body -->
+        </div>
+        <!-- / card -->
+      </li>
+      <!-- / project -->
+
+
+
+
+    </ul>
+  </ng-container>
+  <ng-template #loading>
+    <div class="spinner-border" role="status">
+      <span class="sr-only">Loading...</span>
+    </div>
+  </ng-template>
+  <!-- / portfolio -->
+</div>
+<!--
+<table>
+  <ng-container *ngFor="let titulo of titulos">
+    <th>{{titilo}}</th>
+  </ng-container>
+  
+</table>-->
