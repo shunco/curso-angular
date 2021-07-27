@@ -93,6 +93,9 @@ export class AppComponent implements OnInit {
       },{
         title: 'loading',
         path: 'template/loading'
+      },{
+        title: 'views',
+        path: 'template/views'
       }]
 
     }, 

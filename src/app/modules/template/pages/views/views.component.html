@@ -1,0 +1,17 @@
+<div class="container">
+    <app-alert #alerta></app-alert>
+    <div class="row">
+        <div class="col-md-5">
+            <ul class="list-group">
+                <app-producto *ngFor="let producto of productos1" [producto]="producto" #lista_productos></app-producto>
+            </ul>
+        </div>
+        <div class="col-md-2"><button type="button" class="btn btn-primary" (click)="move()">Mover</button>
+        </div>
+        <div class="col-md-5">
+            <ul class="list-group">
+                <app-producto *ngFor="let producto of productos2" [producto]="producto"></app-producto>
+            </ul>
+        </div>
+    </div>
+</div>
