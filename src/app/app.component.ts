@@ -96,6 +96,9 @@ export class AppComponent implements OnInit {
       },{
         title: 'views',
         path: 'template/views'
+      }, {
+        title: 'Dynamic Components',
+        path: 'template/dynamic-components'
       }]
 
     }, 
