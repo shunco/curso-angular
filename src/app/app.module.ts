@@ -23,6 +23,7 @@ import { NotificationService } from './services/notification.service';
 import { LoginComponent } from './pages/login/login.component';
 
 import {ReactiveFormsModule} from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -56,7 +57,8 @@ import {ReactiveFormsModule} from '@angular/forms';
         }
       }
     }),
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [NotificationService],
   bootstrap: [AppComponent]

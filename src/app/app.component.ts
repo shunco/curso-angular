@@ -7,6 +7,7 @@ import { Observable } from 'rxjs';
 import { Message, TypeMessage } from './models/message';
 
 import { NotifierService } from 'angular-notifier';
+import { AuthService } from './services/auth.service';
 
 
 @Component({
@@ -20,8 +21,13 @@ export class AppComponent implements OnInit {
   notication$: Observable<Message>;
   private readonly notifier: NotifierService;
 
-  constructor(private notificationService: NotificationService, notifierService: NotifierService) {
+  user$: Observable<any>;
+
+  constructor(private notificationService: NotificationService, notifierService: NotifierService,
+    private authService: AuthService) {
+
     this.notifier = notifierService;
+    this.user$ = this.authService.user.asObservable();
 
   }
 

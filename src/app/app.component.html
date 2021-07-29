@@ -23,7 +23,7 @@
 
 
     </ul>
-    <ul class="list-unstyled CTAs">
+    <ul class="list-unstyled CTAs" *ngIf="!(user$ | async)">
       <li> <button  class="btn btn-default" [routerLink]="['/login']">Login</button> </li>
     </ul>
   </nav>

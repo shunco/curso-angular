@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Observable } from 'rxjs';
+import { AuthService } from '../../services/auth.service';
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-login',
@@ -16,10 +18,13 @@ export class LoginComponent implements OnInit {
   })
 
 
-  is_valid_username$:Observable<string>;
-  is_valid_password$:Observable<string>;
+  is_valid_username$: Observable<string>;
+  is_valid_password$: Observable<string>;
 
-  constructor() { }
+  constructor(private authService: AuthService, private router: Router) {
+
+  }
+
 
   ngOnInit() {
 
@@ -54,10 +59,34 @@ export class LoginComponent implements OnInit {
   }
 
 
-  login() {
+  async login() {
 
     let errors = this.formItem.get('username').errors;
-    
+
+    if (this.formItem.valid) {
+
+      try {
+        let form = this.formItem.value;
+        let result = await this.authService.login(form.username, form.password).toPromise();
+        
+        
+        if(result.success){
+          this.router.navigate(['external_component']);
+        }else {
+          //practica, colocar el notificador de rojo que esta en el componente de carrito
+        }
+
+      } catch (error) {
+
+        //this.alert =error;
+
+      }
+
+    } else {
+
+      //Lanzar y renderizar los errores en la platilla
+    }
+
   }
 
   cancel() {
