@@ -20,6 +20,9 @@ import { ProductosComponent } from './pages/productos/productos.component';
 import { NotifierModule } from 'angular-notifier';
 
 import { NotificationService } from './services/notification.service';
+import { LoginComponent } from './pages/login/login.component';
+
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -35,7 +38,8 @@ import { NotificationService } from './services/notification.service';
     PostsComponent,
     AboutComponent,
     FriendsComponent,
-    ProductosComponent
+    ProductosComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -52,6 +56,7 @@ import { NotificationService } from './services/notification.service';
         }
       }
     }),
+    ReactiveFormsModule
   ],
   providers: [NotificationService],
   bootstrap: [AppComponent]

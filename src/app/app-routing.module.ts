@@ -9,7 +9,8 @@ import { RoutingParamsComponent } from './pages/routing-params/routing-params.co
 import { PostsComponent } from './pages/routing-params/posts/posts.component';
 import { AboutComponent } from './pages/routing-params/about/about.component';
 import { FriendsComponent } from './pages/routing-params/friends/friends.component';
-import { ProductosComponent } from './pages/productos/productos.component'; 
+import { ProductosComponent } from './pages/productos/productos.component';
+import { LoginComponent } from './pages/login/login.component';
 
 
 const routes: Routes = [{
@@ -31,21 +32,21 @@ const routes: Routes = [{
 
 
 
-  {
-    path: 'posts',
-    component: PostsComponent
-  }, {
-    path: 'about',
-    component: AboutComponent
-  }, {
-    path: 'friends/:usuario_id',
-    component: FriendsComponent
-  }, {
-    path: '',
-    pathMatch: 'full',
-    redirectTo: 'posts'
-  },
-  { path: "**", redirectTo: "posts" }
+    {
+      path: 'posts',
+      component: PostsComponent
+    }, {
+      path: 'about',
+      component: AboutComponent
+    }, {
+      path: 'friends/:usuario_id',
+      component: FriendsComponent
+    }, {
+      path: '',
+      pathMatch: 'full',
+      redirectTo: 'posts'
+    },
+    { path: "**", redirectTo: "posts" }
 
 
 
@@ -56,9 +57,10 @@ const routes: Routes = [{
   path: 'productos',
   component: ProductosComponent
 },
-  { path: 'observable', loadChildren: () => import('./modules/observable/observable.module').then(m => m.ObservableModule) },
-  { path: 'events', loadChildren: () => import('./modules/events/events.module').then(m => m.EventsModule) },
-  { path: 'template', loadChildren: () => import('./modules/template/template.module').then(m => m.TemplateModule) }
+{ path: 'observable', loadChildren: () => import('./modules/observable/observable.module').then(m => m.ObservableModule) },
+{ path: 'events', loadChildren: () => import('./modules/events/events.module').then(m => m.EventsModule) },
+{ path: 'template', loadChildren: () => import('./modules/template/template.module').then(m => m.TemplateModule) },
+{ path: 'login', component: LoginComponent }
 ];
 
 @NgModule({
