@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl , Validators} from '@angular/forms';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-login',
@@ -14,17 +15,52 @@ export class LoginComponent implements OnInit {
     remember: new FormControl(false)
   })
 
+
+  is_valid_username$:Observable<string>;
+  is_valid_password$:Observable<string>;
+
   constructor() { }
 
   ngOnInit() {
+
+    this.formItem.get('remember').valueChanges.subscribe(value => {
+
+      if (value) {
+
+        this.formItem.patchValue({
+          username: 'cesar.cast.more@gmail.com',
+          password: 'cesar.cast.more'
+        });
+
+      } else {
+
+        this.formItem.patchValue({
+          username: null,
+          password: null
+        });
+      }
+
+    });
+
+    this.is_valid_password$ = this.formItem.get('password').statusChanges;
+    this.is_valid_username$ = this.formItem.get('username').statusChanges;
+
+
+
+
+
+
+
   }
 
 
-  login(){
-    console.log(this.formItem.valid);
+  login() {
+
+    let errors = this.formItem.get('username').errors;
+    
   }
 
-  cancel(){
+  cancel() {
     this.formItem.reset();
   }
 
