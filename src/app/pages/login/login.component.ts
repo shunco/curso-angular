@@ -71,7 +71,7 @@ export class LoginComponent implements OnInit {
         
         
         if(result.success){
-          this.router.navigate(['external_component']);
+          this.router.navigate(['/routing_params/posts']);
         }else {
           //practica, colocar el notificador de rojo que esta en el componente de carrito
         }

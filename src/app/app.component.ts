@@ -27,7 +27,6 @@ export class AppComponent implements OnInit {
     private authService: AuthService) {
 
     this.notifier = notifierService;
-    this.user$ = this.authService.user.asObservable();
 
   }
 
@@ -43,7 +42,8 @@ export class AppComponent implements OnInit {
           path: 'external_component'
         }, {
           title: 'Componentes Externos Web',
-          path: 'web_component'
+          path: 'web_component',
+          required_auth: true
         }, {
           title: 'Modulo Carga Lenta',
           path: 'editor'
@@ -58,6 +58,7 @@ export class AppComponent implements OnInit {
     {
       title: 'Routing',
       key: 'routing',
+      required_auth: true,
       children: [{
         title: 'Parametros',
         path: 'routing_params'
@@ -79,7 +80,8 @@ export class AppComponent implements OnInit {
         path: 'observable/carrito'
       }, {
         title: 'Movie DB',
-        path: 'observable/moviedb'
+        path: 'observable/moviedb',
+        required_auth: true
       },{
         title: 'Factura',
         path: 'observable/factura'
@@ -93,6 +95,7 @@ export class AppComponent implements OnInit {
     {
       title: 'Template',
       key: 'template',
+      required_auth: true,
       children: [{
         title: 'Content',
         path: 'template/content'
@@ -119,6 +122,9 @@ export class AppComponent implements OnInit {
 
   public ngOnInit() {
 
+    this.user$ = this.authService.user.asObservable();
+
+
     this.notication$ = this.notificationService.getNotifObservable();
 
     this.notication$.subscribe(message => {
@@ -134,6 +140,11 @@ export class AppComponent implements OnInit {
 
 
 
+  }
+
+
+  public logout(){
+    this.authService.logout();
   }
 
 }

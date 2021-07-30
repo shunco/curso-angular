@@ -3,4 +3,5 @@ export interface Menu {
     key?: string;
     children?: Menu[];
     path?: string;
+    required_auth?: boolean;
 }

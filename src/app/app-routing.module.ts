@@ -12,13 +12,18 @@ import { FriendsComponent } from './pages/routing-params/friends/friends.compone
 import { ProductosComponent } from './pages/productos/productos.component';
 import { LoginComponent } from './pages/login/login.component';
 
+import {IsAuthGuard} from './guards/is-auth.guard';
+import { NotFoundComponent } from './pages/not-found/not-found.component';
+
 
 const routes: Routes = [{
   path: 'external_component',
-  component: ExternalComponentComponent
+  component: ExternalComponentComponent,
+  
 }, {
   path: 'web_component',
-  component: WebComponentComponent
+  component: WebComponentComponent,
+  canActivate: [IsAuthGuard]
 },
 { path: 'editor', loadChildren: () => import('./editor/editor.module').then(m => m.EditorModule) },
 
@@ -28,6 +33,7 @@ const routes: Routes = [{
 }, {
   path: 'routing_params',
   component: RoutingParamsComponent,
+  canActivateChild: [IsAuthGuard],
   children: [
 
 
@@ -59,8 +65,10 @@ const routes: Routes = [{
 },
 { path: 'observable', loadChildren: () => import('./modules/observable/observable.module').then(m => m.ObservableModule) },
 { path: 'events', loadChildren: () => import('./modules/events/events.module').then(m => m.EventsModule) },
-{ path: 'template', loadChildren: () => import('./modules/template/template.module').then(m => m.TemplateModule) },
-{ path: 'login', component: LoginComponent }
+{ path: 'template', loadChildren: () => import('./modules/template/template.module').then(m => m.TemplateModule), canLoad: [IsAuthGuard]
+ },
+{ path: 'login', component: LoginComponent },
+{ path: '404', component: NotFoundComponent }
 ];
 
 @NgModule({
