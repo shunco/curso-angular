@@ -25,6 +25,9 @@ import { LoginComponent } from './pages/login/login.component';
 import {ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { ChangeDetectionRefComponent } from './pages/change-detection-ref/change-detection-ref.component';
+import { ChangeDetectionPushComponent } from './pages/change-detection-push/change-detection-push.component';
+import { CardComponent } from './pages/change-detection-push/card/card.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +45,10 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
     FriendsComponent,
     ProductosComponent,
     LoginComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    ChangeDetectionRefComponent,
+    ChangeDetectionPushComponent,
+    CardComponent
   ],
   imports: [
     BrowserModule,

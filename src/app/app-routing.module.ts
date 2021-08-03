@@ -14,6 +14,8 @@ import { LoginComponent } from './pages/login/login.component';
 
 import {IsAuthGuard} from './guards/is-auth.guard';
 import { NotFoundComponent } from './pages/not-found/not-found.component';
+import { ChangeDetectionRefComponent } from './pages/change-detection-ref/change-detection-ref.component';
+import { ChangeDetectionPushComponent } from './pages/change-detection-push/change-detection-push.component';
 
 
 const routes: Routes = [{
@@ -68,6 +70,8 @@ const routes: Routes = [{
 { path: 'template', loadChildren: () => import('./modules/template/template.module').then(m => m.TemplateModule), canLoad: [IsAuthGuard]
  },
 { path: 'login', component: LoginComponent },
+{ path: 'change-detection-ref', component: ChangeDetectionRefComponent },
+{ path: 'change-detection-push', component: ChangeDetectionPushComponent },
 { path: '404', component: NotFoundComponent }
 ];
 

@@ -109,6 +109,24 @@ export class AppComponent implements OnInit {
         title: 'Dynamic Components',
         path: 'template/dynamic-components'
       }]
+    },
+
+
+
+
+      {
+        title: 'Change Detection',
+        key: 'change',
+        children: [{
+          title: 'Reference',
+          path: 'change-detection-ref'
+        },{
+          title: 'Push',
+          path: 'change-detection-push'
+        }]
+
+
+        
 
     }, 
 
