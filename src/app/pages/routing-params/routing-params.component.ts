@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { ProfileService } from 'src/app/services/profile.service';
 import { Usuario} from '../../models/usuario';
 
 @Component({
@@ -14,9 +16,19 @@ export class RoutingParamsComponent implements OnInit {
     type: 'web'
   }
 
-  constructor() { }
+  usuario$: Observable<any>;
+
+
+
+  constructor(private profileService: ProfileService) {
+
+   }
 
   ngOnInit() {
+
+    this.usuario$ = this.profileService.getProfile();
+
+
   }
 
 }
