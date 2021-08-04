@@ -1,67 +1,109 @@
 <div class="wrapper">
-  <nav id="sidebar" [ngClass]="{'active': isOpen }">
+  <nav id="sidebar" [ngClass]="{ active: isOpen }">
     <div class="sidebar-header">
-      <h3>TECGURUS</h3>
-      <hr>
+      <h3>Curso Angular</h3>
+      <hr />
     </div>
     <ul class="list-unstyled components">
-
       <li *ngFor="let menu of menus">
-
         <!--Agrupador-->
 
         <!--Agrupoador -- No ocupa authentificacion-->
-        <a *ngIf="menu?.children?.length && !menu?.required_auth" href="#{{menu.key}}" data-toggle="collapse" aria-expanded="false"
-          class="dropdown-toggle">{{menu.title}}</a>
+        <a
+          *ngIf="menu?.children?.length && !menu?.required_auth"
+          href="#{{ menu.key }}"
+          data-toggle="collapse"
+          aria-expanded="false"
+          class="dropdown-toggle"
+          >{{ menu.title }}</a
+        >
         <!--Agrupoador --- Si  ocupa authentificacion-->
-        <a *ngIf="menu?.children?.length && menu?.required_auth && (user$ | async)" href="#{{menu.key}}" data-toggle="collapse"
-          aria-expanded="false" class="dropdown-toggle">{{menu.title}}</a>
+        <a
+          *ngIf="
+            menu?.children?.length && menu?.required_auth && (user$ | async)
+          "
+          href="#{{ menu.key }}"
+          data-toggle="collapse"
+          aria-expanded="false"
+          class="dropdown-toggle"
+          >{{ menu.title }}</a
+        >
 
-        <ul class="collapse list-unstyled" [id]="menu.key" *ngIf="menu?.children?.length">
+        <ul
+          class="collapse list-unstyled"
+          [id]="menu.key"
+          *ngIf="menu?.children?.length"
+        >
           <li *ngFor="let child of menu.children">
-
             <!--Las opciones del agrupador-->
-            <a *ngIf="!child?.required_auth" [routerLink]="child.path">{{ child.title }}</a> 
-            <a *ngIf="child?.required_auth && (user$ | async)" [routerLink]="child.path">{{ child.title }}</a> 
-
+            <a *ngIf="!child?.required_auth" [routerLink]="child.path">{{
+              child.title
+            }}</a>
+            <a
+              *ngIf="child?.required_auth && (user$ | async)"
+              [routerLink]="child.path"
+              >{{ child.title }}</a
+            >
           </li>
         </ul>
         <!--No Agrupador-->
-        <a [routerLink]="menu.path" *ngIf="!menu.children && !menu?.required_auth">{{menu.title}}</a>
-        <a [routerLink]="menu.path" *ngIf="!menu.children && menu?.required_auth && (user$ | async)">{{menu.title}}</a>
+        <a
+          [routerLink]="menu.path"
+          *ngIf="!menu.children && !menu?.required_auth"
+          >{{ menu.title }}</a
+        >
+        <a
+          [routerLink]="menu.path"
+          *ngIf="!menu.children && menu?.required_auth && (user$ | async)"
+          >{{ menu.title }}</a
+        >
 
         <!--¿Como lo hubiera hecho con observables?  operador user$ mergeMap() menus$ -->
-
       </li>
-
-
-
-
-
     </ul>
     <ul class="list-unstyled CTAs" *ngIf="!(user$ | async)">
-      <li> <button class="btn btn-default" [routerLink]="['/login']">Login</button> </li>
+      <li>
+        <button class="btn btn-default" [routerLink]="['/login']">Login</button>
+      </li>
     </ul>
 
-    <ul class="list-unstyled CTAs" *ngIf="(user$ | async)">
-      <li> <button class="btn btn-default" (click)="logout()">Logout</button> </li>
+    <ul class="list-unstyled CTAs" *ngIf="user$ | async">
+      <li>
+        <button class="btn btn-default" (click)="logout()">Logout</button>
+      </li>
     </ul>
-
-
   </nav>
-  <div class="content" style="width: 100%;">
+  <div class="content" style="width: 100%">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <button type="button" id="sidebarCollapse" class="btn btn-info" (click)="isOpen=!isOpen"> <i
-          class="fa fa-align-justify"></i> </button> <button class="navbar-toggler" type="button" data-toggle="collapse"
-        data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"> <span
-          class="navbar-toggler-icon"></span> </button>
+      <button
+        type="button"
+        id="sidebarCollapse"
+        class="btn btn-info"
+        (click)="isOpen = !isOpen"
+      >
+        <i class="fa fa-align-justify"></i>
+      </button>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ml-auto">
-          <li class="nav-item active"> <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          <li class="nav-item active">
+            <a class="nav-link" href="#"
+              >Home <span class="sr-only">(current)</span></a
+            >
           </li>
-          <li class="nav-item"> <a class="nav-link" href="#">Features</a> </li>
-          <li class="nav-item"> <a class="nav-link" href="#">Pricing</a> </li>
-          <li class="nav-item"> <a class="nav-link" href="#">Contact</a> </li>
+          <li class="nav-item"><a class="nav-link" href="#">Features</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Pricing</a></li>
+          <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
         </ul>
       </div>
     </nav>
@@ -73,4 +115,3 @@
     </div>
   </div>
 </div>
-
